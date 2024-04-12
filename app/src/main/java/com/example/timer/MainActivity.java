@@ -1,7 +1,6 @@
 package com.example.timer;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
@@ -35,7 +34,7 @@ public class MainActivity extends AppCompatActivity{
     class MyGestureListener extends GestureDetector.SimpleOnGestureListener{
         @Override
         public boolean onDoubleTap(@NonNull MotionEvent e) {
-            time.setText("00:00:00");
+            time.setText(getResources().getText(R.string.def_time));
             seconds = 0;
             flag = 1;
             isRunning=false;
@@ -64,11 +63,6 @@ public class MainActivity extends AppCompatActivity{
                 colorFlag=0;
             }
             super.onLongPress(e);
-        }
-
-        @Override
-        public boolean onFling(@Nullable MotionEvent e1, @NonNull MotionEvent e2, float velocityX, float velocityY) {
-            return super.onFling(e1, e2, velocityX, velocityY);
         }
     }
     public boolean onTouchEvent(MotionEvent motionEvent) {

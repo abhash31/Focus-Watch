@@ -1,6 +1,4 @@
 <resources>
-    <string name="app_name">Stopwatch</string>
-    <string name="title_activity_fullscreen">FullscreenActivity</string>
-    <string name="dummy_button">Dummy Button</string>
-    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="app_name" translatable="false">Focus Watch</string>
+    <string name="def_time" translatable="false">00:00:00</string>
 </resources>
