@@ -18,10 +18,10 @@ Focus Watch is a minimalist stopwatch application designed to help you stay focu
 4. **Change Theme:** Long press on the screen to switch between dark and light themes. Long press again to toggle back to the previous theme.
 
 ## Screenshots
-![Screeshot1](https://github.com/abhash31/images/blob/main/Focus1.jpg)
-![Screeshot2](https://github.com/abhash31/images/blob/main/Focus2.jpg)
-![Screeshot3](https://github.com/abhash31/images/blob/main/Focus3.jpg)
-![Screeshot4](https://github.com/abhash31/images/blob/main/Focus4.jpg)
+![Screeshot1](https://github.com/abhash31/files/blob/main/Focus1.jpg)
+![Screeshot2](https://github.com/abhash31/files/blob/main/Focus2.jpg)
+![Screeshot3](https://github.com/abhash31/files/blob/main/Focus3.jpg)
+![Screeshot4](https://github.com/abhash31/files/blob/main/Focus4.jpg)
 
 ## Contributing
 
