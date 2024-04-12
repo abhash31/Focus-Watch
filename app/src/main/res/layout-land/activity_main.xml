@@ -12,49 +12,13 @@
         android:id="@+id/txt_time"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="124dp"
         android:text="00:00:00"
         android:textColor="@color/white"
-        android:textSize="60sp"
+        android:textSize="150sp"
+        android:fontFamily="@font/scoreboard"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/txt_time"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
-
-<!--        <androidx.appcompat.widget.AppCompatButton-->
-<!--            android:id="@+id/btn_start"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="48dp"-->
-<!--            android:text="start"-->
-<!--            style="@style/buttonStyle"-->
-<!--            android:backgroundTint="@drawable/button_bg_color"-->
-<!--            android:layout_marginEnd="25dp"-->
-<!--            android:onClick="startTimer"/>-->
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btn_pause"
-            android:layout_width="wrap_content"
-            android:layout_height="48dp"
-            android:text="start"
-            style="@style/buttonStyle"
-            android:layout_marginEnd="25dp"/>
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btn_stop"
-            android:backgroundTint="@color/red"
-            android:layout_width="wrap_content"
-            android:layout_height="48dp"
-            android:text="stop"
-            style="@style/buttonStyle"/>
-
-    </LinearLayout>
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

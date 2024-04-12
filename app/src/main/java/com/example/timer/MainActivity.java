@@ -1,96 +1,82 @@
 package com.example.timer;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.os.Bundle;
 import android.os.Handler;
-import android.text.Layout;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.View;
-import android.view.WindowManager;
-import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.Locale;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity{
 
     private int seconds=0;
     private boolean isRunning = false;
     TextView time;
-    Button startBtn, stopBtn, pauseBtn;
     int flag=1;
-
+    int colorFlag=0;
     ConstraintLayout mainLayout;
+    GestureDetector gestureDetector;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-//        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_main);
 
         init();
         runTimer();
-
-        time.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Toast.makeText(MainActivity.this, "Toast", Toast.LENGTH_SHORT).show();
-            }
-        });
-
-        mainLayout = findViewById(R.id.main_layout);
-
-//        mainLayout.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Toast.makeText(MainActivity.this, "Tap Detected!", Toast.LENGTH_SHORT).show();
-//            }
-//        });
-
-
-
-
-
-
-        pauseBtn.setText("start");
-//        startBtn.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                isRunning=true;
-//                startBtn.setVisibility(View.GONE);
-//            }
-//        });
-
-        pauseBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if(flag==0){
-                    isRunning=false;
-                    pauseBtn.setText("resume");
-                    flag=1;
-                } else{
-                    isRunning=true;
-                    pauseBtn.setText("pause");
-                    flag=0;
-                }
-            }
-        });
-
-        stopBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                time.setText("00:00:00");
-                seconds = 0;
-                flag = 1;
-                isRunning=false;
-                pauseBtn.setText("start");
-            }
-        });
     }
 
+    class MyGestureListener extends GestureDetector.SimpleOnGestureListener{
+        @Override
+        public boolean onDoubleTap(@NonNull MotionEvent e) {
+            time.setText("00:00:00");
+            seconds = 0;
+            flag = 1;
+            isRunning=false;
+            return super.onDoubleTap(e);
+        }
+        @Override
+        public boolean onSingleTapConfirmed(@NonNull MotionEvent e) {
+            if(flag==0){
+                isRunning=false;
+                flag=1;
+            } else{
+                isRunning=true;
+                flag=0;
+            }
+            return super.onSingleTapConfirmed(e);
+        }
+        @Override
+        public void onLongPress(@NonNull MotionEvent e) {
+            if(colorFlag==0) {
+                mainLayout.setBackgroundColor(getColor(R.color.white));
+                time.setTextColor(getColor(R.color.black));
+                colorFlag=1;
+            } else{
+                mainLayout.setBackgroundColor(getColor(R.color.black));
+                time.setTextColor(getColor(R.color.white));
+                colorFlag=0;
+            }
+            super.onLongPress(e);
+        }
+
+        @Override
+        public boolean onFling(@Nullable MotionEvent e1, @NonNull MotionEvent e2, float velocityX, float velocityY) {
+            return super.onFling(e1, e2, velocityX, velocityY);
+        }
+    }
+    public boolean onTouchEvent(MotionEvent motionEvent) {
+        if(this.gestureDetector.onTouchEvent(motionEvent)){
+            return true;
+        }
+        return super.onTouchEvent(motionEvent);
+    }
     @Override
     protected void onResume() {
         super.onResume();
@@ -102,14 +88,11 @@ public class MainActivity extends AppCompatActivity {
                 View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN |
                 View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
     }
-
     void init(){
         time = findViewById(R.id.txt_time);
-//        startBtn = findViewById(R.id.btn_start);
-        pauseBtn = findViewById(R.id.btn_pause);
-        stopBtn = findViewById(R.id.btn_stop);
+        gestureDetector = new GestureDetector(this, new MyGestureListener());
+        mainLayout = findViewById(R.id.main_layout);
     }
-
     void runTimer(){
         Handler handler = new Handler();
         handler.post(new Runnable() {
@@ -127,5 +110,4 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
-
 }
