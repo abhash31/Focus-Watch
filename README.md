@@ -2,6 +2,8 @@
 
 Focus Watch is a minimalist stopwatch application designed to help you stay focused on your tasks without distractions. With its clean and simple design, Focus Watch provides you with a distraction-free environment to track your time effectively.
 
+[Download the APK file](https://github.com/abhash31/files/raw/main/Focus%20Watch.apk)
+
 ## Features
 
 - **Minimal Design Stopwatch:** Focus Watch offers a clutter-free interface, allowing you to focus solely on your tasks without any unnecessary elements.
@@ -16,14 +18,10 @@ Focus Watch is a minimalist stopwatch application designed to help you stay focu
 4. **Change Theme:** Long press on the screen to switch between dark and light themes. Long press again to toggle back to the previous theme.
 
 ## Screenshots
-
-
-
-## Installation
-
-1. [Download the APK file](https://drive.google.com/file/d/1_Be1ZyQa14MznCsbhhq7CcXpcfB-tjYs/view?usp=sharing)
-2. Install the APK on your Android device.
-3. Open Focus Watch from your app drawer.
+![Screeshot1](https://github.com/abhash31/images/blob/main/Focus1.jpg)
+![Screeshot2](https://github.com/abhash31/images/blob/main/Focus2.jpg)
+![Screeshot3](https://github.com/abhash31/images/blob/main/Focus3.jpg)
+![Screeshot4](https://github.com/abhash31/images/blob/main/Focus4.jpg)
 
 ## Contributing
 
